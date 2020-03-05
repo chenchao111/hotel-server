@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vue-admin-template
 
 English | [简体中文](./README-zh.md)
@@ -89,3 +90,7 @@ Modern browsers and Internet Explorer 10+.
 [MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
 
 Copyright (c) 2017-present PanJiaChen
+=======
+# hotel-server
+酒店预定系统-pc-商户端
+>>>>>>> e9706df8c5b47bd9499c7b5a19cc67a3c3cb795c
