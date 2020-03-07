@@ -2,6 +2,7 @@ import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
+console.log('process: ', process)
 
 // create an axios instance
 const service = axios.create({
@@ -46,7 +47,7 @@ service.interceptors.response.use(
     const res = response.data
 
     // if the custom code is not 20000, it is judged as an error.
-    if (res.code !== 20000) {
+    if (Number(res.code) !== 0) {
       Message({
         message: res.message || 'Error',
         type: 'error',

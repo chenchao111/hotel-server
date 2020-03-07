@@ -1,8 +1,18 @@
 
 const tokens = {
-  admin: {
-    token: 'admin-token'
+  chenchao: {
+    token: 'admin-token',
+    password: 'chenchao123456'
   },
+  wanggang: {
+    token: 'admin-token',
+    password: 'wanggang123456'
+  },
+  wuqiong: {
+    token: 'admin-token',
+    password: 'wuqiong123456'
+  },
+  password: "1234567890",
   editor: {
     token: 'editor-token'
   }
@@ -26,14 +36,13 @@ const users = {
 export default [
   // user login
   {
-    url: '/vue-admin-template/user/login',
+    url: '/hotel-server/user/login',
     type: 'post',
     response: config => {
-      const { username } = config.body
+      const { username, password } = config.body
       const token = tokens[username]
-
       // mock error
-      if (!token) {
+      if (!token || (token && token.password !== password)) {
         return {
           code: 60204,
           message: 'Account and password are incorrect.'
@@ -49,7 +58,7 @@ export default [
 
   // get user info
   {
-    url: '/vue-admin-template/user/info\.*',
+    url: '/hotel-server/user/info\.*',
     type: 'get',
     response: config => {
       const { token } = config.query
@@ -72,7 +81,7 @@ export default [
 
   // user logout
   {
-    url: '/vue-admin-template/user/logout',
+    url: '/hotel-server/user/logout',
     type: 'post',
     response: _ => {
       return {

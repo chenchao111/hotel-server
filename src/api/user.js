@@ -1,8 +1,9 @@
-import request from '@/utils/request'
+import request from '@/http/request'
+import { prefix } from '@/api/prefix' 
 
 export function login(data) {
   return request({
-    url: '/vue-admin-template/user/login',
+    url: `${prefix}/hotel-server/user/login`,
     method: 'post',
     data
   })
@@ -10,7 +11,7 @@ export function login(data) {
 
 export function getInfo(token) {
   return request({
-    url: '/vue-admin-template/user/info',
+    url: `${prefix}/hotel-server/user/info`,
     method: 'get',
     params: { token }
   })
@@ -18,7 +19,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/vue-admin-template/user/logout',
+    url: `${prefix}/hotel-server/user/logout`,
     method: 'post'
   })
 }
